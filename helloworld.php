@@ -27,7 +27,18 @@
       $final--;
       $a++;
     }
-    echo "Loop stopped when a was ".$a. " and final was ".$final;
+    echo "Loop stopped when a was ".$a. " and final was ".$final. '<br>';
+  
+    $initial = 0;
+    $last = 30;
+
+    do {
+      # code...
+      $initial +=5;
+    } while ($last <= 50);
+
+    echo 'Loop stopped when initial was '.$initial;
+  
   ?>  
 </body>
 </html>
