@@ -55,7 +55,18 @@
       }
     }
     echo "Loop stopped when my number was ".$myNum. '<br>';
-  
+    
+    $evenNum = array(2,4,6,8,10);
+    foreach ($evenNum as $value) {
+      # code...
+      if($value ===4){
+        continue;
+       
+      }
+      echo "Value is ".$value. '<br>';
+
+    }
+    
   ?>  
 </body>
 </html>
