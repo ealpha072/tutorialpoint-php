@@ -70,7 +70,14 @@
     $people = array('moham'=>2000,'queen'=>4000, 'alp'=>800);
     
     echo 'Mohams salary is '.$people['moham']. ',<br/>';
-    
+    #multi-dimension array
+    $marks = array(
+      'moham'=>array(
+        'ph'=>30,
+        'math'=>39
+      )
+    );
+    echo "Mohameds mark in physics is ".$marks['moham']['ph'].'<br>';
   ?>  
 </body>
 </html>
