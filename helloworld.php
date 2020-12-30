@@ -66,6 +66,10 @@
       echo "Value is ".$value. '<br>';
 
     }
+    ##associative array
+    $people = array('moham'=>2000,'queen'=>4000, 'alp'=>800);
+    
+    echo 'Mohams salary is '.$people['moham']. ',<br/>';
     
   ?>  
 </body>
