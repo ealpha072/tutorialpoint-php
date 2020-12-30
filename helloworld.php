@@ -19,7 +19,15 @@
       $second +=10;
     }
     echo 'At loop end, first is' .$first. ' while second is '.$second. '<br>';
-  
+    
+    $a = 0;
+    $final =25;
+    while ($a < 10) {
+      # code...
+      $final--;
+      $a++;
+    }
+    echo "Loop stopped when a was ".$a. " and final was ".$final;
   ?>  
 </body>
 </html>
