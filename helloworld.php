@@ -1,7 +1,7 @@
 <html>
 <body>
   <?php 
-    $date = date('D');
+    /*$date = date('D');
     if ($date == 'Fri') {
       # code...
       echo "Have a nice weekend";
@@ -39,7 +39,7 @@
 
     echo 'Loop stopped when initial was '.$initial;*/
 
-    $numArray = array(1,2,3,4,5);
+    /*$numArray = array(1,2,3,4,5);
     foreach ($numArray as $value) {
       # code...
       $value +=3;
@@ -81,8 +81,12 @@
     
     #string methods;
     /*strlen=> gives length of string
-    strpos =>gives pos of a string within a string
-  
+    strpos =>gives pos of a string within a string*/
+    
+    
+    
+    
+
   ?>  
 </body>
 </html>
