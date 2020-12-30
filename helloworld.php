@@ -78,6 +78,11 @@
       )
     );
     echo "Mohameds mark in physics is ".$marks['moham']['ph'].'<br>';
+    
+    #string methods;
+    /*strlen=> gives length of string
+    strpos =>gives pos of a string within a string
+  
   ?>  
 </body>
 </html>
