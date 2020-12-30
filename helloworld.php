@@ -32,12 +32,19 @@
     $initial = 0;
     $last = 30;
 
-    do {
+    /*do {
       # code...
       $initial +=5;
     } while ($last <= 50);
 
-    echo 'Loop stopped when initial was '.$initial;
+    echo 'Loop stopped when initial was '.$initial;*/
+
+    $numArray = array(1,2,3,4,5);
+    foreach ($numArray as $value) {
+      # code...
+      $value +=3;
+      echo "Value is ".$value. "<br />";
+    }
   
   ?>  
 </body>
