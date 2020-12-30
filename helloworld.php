@@ -45,6 +45,16 @@
       $value +=3;
       echo "Value is ".$value. "<br />";
     }
+
+    $myNum = 46;
+
+    while($myNum<60){
+      $myNum ++;
+      if($myNum === 59){
+        break;
+      }
+    }
+    echo "Loop stopped when my number was ".$myNum. '<br>';
   
   ?>  
 </body>
