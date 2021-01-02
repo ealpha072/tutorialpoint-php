@@ -70,25 +70,32 @@
     <!--<form action="welcome.php" method = 'post'>-->
     <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post">
       <label for="name">Name</label><br>
-      <input type="text" name='name' ><span class='error'> <?php echo $name_error;?></span>
+      <input type="text" name='name' value="<?php echo $name;?>"><span class='error'> <?php echo $name_error;?></span>
       <br>
       <label for="E-mail">E-mail</label><br>
-      <input type="email" name='email'>
+      <input type="email" name='email' value="<?php echo $email;?>">
       <span class='error'> <?php echo $email_err;?></span>
       <br>
       <label for="website">Website</label><br>
-      <input type="text" name='website'>
+      <input type="text" name='website' value="<?php echo $website;?>">
       <span class='error'> <?php echo $website_err;?></span>
       <br>
       <label for="comment">Comment</label><br>
-      <textarea name="comment" id="" cols="30" rows="6"></textarea>
+      <textarea name="comment" id="" cols="30" rows="6" value="<?php echo $comment?>"></textarea>
       <span class='error'> <?php echo $comment_err;?></span>
       <br>
       <label for="gender">Gender</label>
-      <input type="radio" name='gender' value=female>Female
-      <input type="radio" name='gender' value=male>Male
-      <input type="radio" name='gender' value=other>Other
-      <span class='error'> <?php echo $gender_err;?></span>
+      <input type="radio" name='gender' 
+      <?php if(isset($gender)&& $gender==='female'){echo "checked";};?>
+      value=female>Female
+      <input type="radio" name='gender' 
+      <?php if(isset($gender)&& $gender==='male'){echo "checked";};?>
+      value=male>Male
+      <input type="radio" name='gender' 
+      <?php if(isset($gender)&& $gender==='other'){echo "checked";};?>
+      value=other>Other
+      <br>
+      <span class='error'> <?php echo $gender_err;?></span><br>
       <input type="submit">
     </form>
     <h2>Your input: </h2>
