@@ -1,12 +1,49 @@
 <?php 
   $name = $email = $website = $comment= $gender= '' ;
+  $name_error = $email_err= $gender_err= $website_err= $comment_err='';
 
   if($_SERVER["REQUEST_METHOD"]=='POST'){
+    #name validation 
+    if(empty($_POST['name'])){
+      $name_error = 'Name is required';
+    }else{
+      $name = sanitizeData($_POST['name']);
+    }
+    #email validity
+    if(empty($_POST['email'])){
+      $email_err = "E-mail is required";
+    }else{
+      $email = sanitizeData($_POST['email']);
+    }
+
+    #website validity
+    if(empty($_POST['website'])){
+      $website = "";
+    }else{
+      $website = sanitizeData($_POST['website']);
+    }
+
+    #gender validity
+    if(empty($_POST['gender'])){
+      $gender_err = "Gender is required";
+    }else{
+      $gender = sanitizeData($_POST['gender']);
+    }
+
+    #comment validity
+    if(empty($_POST['comment'])){
+      $comment = "";
+    }else{
+      $comment = sanitizeData($_POST['comment']);
+    }
+
+
+    /*
     $name = sanitizeData($_POST['name']);
     $email = sanitizeData($_POST['email']);
     $website = sanitizeData($_POST['website']);
     $comment = sanitizeData($_POST['comment']);
-    $gender = sanitizeData($_POST['gender']);
+    $gender = sanitizeData($_POST['gender']);*/
   }
 
 
@@ -21,19 +58,27 @@
 <html>
   <body>
     <!--<form action="welcome.php" method = 'post'>-->
-    <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
+    <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post">
       <label for="name">Name</label><br>
-      <input type="text" name='name' required><br>
+      <input type="text" name='name' ><span class='error'> <?php echo $name_error;?></span>
+      <br>
       <label for="E-mail">E-mail</label><br>
-      <input type="email" name='email' required><br>
+      <input type="email" name='email'>
+      <span class='error'> <?php echo $email_err;?></span>
+      <br>
       <label for="website">Website</label><br>
-      <input type="text" name='website'><br>
+      <input type="text" name='website'>
+      <span class='error'> <?php echo $website_err;?></span>
+      <br>
       <label for="comment">Comment</label><br>
-      <textarea name="comment" id="" cols="30" rows="6"></textarea><br>
+      <textarea name="comment" id="" cols="30" rows="6"></textarea>
+      <span class='error'> <?php echo $comment_err;?></span>
+      <br>
       <label for="gender">Gender</label>
       <input type="radio" name='gender' value=female>Female
       <input type="radio" name='gender' value=male>Male
       <input type="radio" name='gender' value=other>Other
+      <span class='error'> <?php echo $gender_err;?></span>
       <input type="submit">
     </form>
     <h2>Your input: </h2>
