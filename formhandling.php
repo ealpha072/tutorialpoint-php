@@ -1,6 +1,7 @@
 <html>
   <body>
     <form action="welcome.php" method = 'post'>
+    <!--<form action="<?#php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">-->
       <label for="name">Name</label><br>
       <input type="text" name='name' require><br>
       <label for="E-mail">E-mail</label><br>
@@ -16,5 +17,6 @@
       <input type="submit">
     </form>
     <h2>Your input: </h2>
+    
   </body>
 </html>
