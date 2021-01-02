@@ -8,12 +8,19 @@
       $name_error = 'Name is required';
     }else{
       $name = sanitizeData($_POST['name']);
+      if (!preg_match("/^[a-zA-Z-' ]*$/",$name)) {
+        # code...
+        $name_error = "Only letters and white space allowed";
+      }
     }
     #email validity
     if(empty($_POST['email'])){
       $email_err = "E-mail is required";
     }else{
       $email = sanitizeData($_POST['email']);
+      if(!filter_var($email,FILTER_VALIDATE_EMAIL)){
+        $email_err = 'Invalid email address';
+      }
     }
 
     #website validity
@@ -21,6 +28,9 @@
       $website = "";
     }else{
       $website = sanitizeData($_POST['website']);
+      if(!preg_match("/\b(?:(?:https?|ftp):\/\/|www\.)[-a-z0-9+&@#\/%?=~_|!:,.;]*[-a-z0-9+&@#\/%=~_|]/i",$website)){
+        $website_err = "Invalid url";
+      }
     }
 
     #gender validity
