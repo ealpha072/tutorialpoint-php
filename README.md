@@ -1,3 +1,3 @@
 # tutorialpoint-php
 
-A summary of php notes from tutorial point
+Summary of notes on php from tutorial point.
